@@ -1,3 +1,6 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -43,6 +46,12 @@ model teacher {
   schedule       schedule[]
   sessions       sessions?
   weekDay        weekDay?
+}
+
+model admin {
+admin_id  Int @id @default(autoincrement())
+ userName       String @unique
+  password       String
 }
 
 model weekDay {
